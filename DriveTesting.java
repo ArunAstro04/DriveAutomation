@@ -50,12 +50,12 @@ public class DriveTesting extends Screenshot{
 			throw e;
 		}
 	}
-
     public static void main(String[] args) throws AWTException, ParserConfigurationException, InterruptedException, SAXException, IOException {
         deletePastReports();
-        loginAndShare();
-        editDocument_User1();
-        editDocument_User2();
+        performAction("User 1",0,21);
+	performAction("User 2",21,33);
+	performAction("User 3",33,-1);
+	terminate();
     }
 
     public static void deletePastReports() throws AWTException, ParserConfigurationException, InterruptedException, SAXException, IOException {
@@ -96,19 +96,19 @@ public class DriveTesting extends Screenshot{
             firstTime = false;
         }
 	}
-
-	public static void loginAndShare() throws AWTException, ParserConfigurationException, InterruptedException, SAXException, IOException
+	public static void performAction(String user,int start,int end) throws AWTException, ParserConfigurationException, InterruptedException, SAXException, IOException
 	{
-        user = "User 1";
         initialize();
-		driver.get(url);
+	driver.get(url);
         File file = getFileDir("/inputs.xml");
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
         Document doc = dBuilder.parse(file);
         doc.getDocumentElement().normalize();
         NodeList nList = (NodeList) doc.getElementsByTagName("input");
-        for (int temp = 0; temp < 21; temp++)
+	if(end==-1)
+		end=nList.getLength();
+        for (int temp = start; temp < end; temp++)
         {
             Node node = nList.item(temp);
             if (node.getNodeType() == Node.ELEMENT_NODE)
@@ -123,66 +123,13 @@ public class DriveTesting extends Screenshot{
         }
         Thread.sleep(3000);
 	}
-
-	public static void editDocument_User1() throws AWTException, ParserConfigurationException, InterruptedException, SAXException, IOException
+	public static void terminate() throws AWTException, ParserConfigurationException, InterruptedException, SAXException, IOException
 	{
-		user = "User 2";
-        driver.quit();
-		initialize();
-		driver.get(url);
-        File file = getFileDir("/inputs.xml");
-        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-        Document doc = dBuilder.parse(file);
-        doc.getDocumentElement().normalize();
-        NodeList nList = (NodeList) doc.getElementsByTagName("input");
-        for (int temp = 21; temp < 33; temp++)
-        {
-            Node node = nList.item(temp);
-            if (node.getNodeType() == Node.ELEMENT_NODE)
-            {
-                Element eElement = (Element) node;
-                xpath = eElement.getElementsByTagName("xpath").item(0).getTextContent();
-                functionality = eElement.getElementsByTagName("function").item(0).getTextContent();
-                value = eElement.getElementsByTagName("value").item(0).getTextContent();
-                Thread.sleep(1000);
-                performOperation();
-            }
-        }
-        Thread.sleep(3000);
-	}
-
-	public static void editDocument_User2() throws AWTException, ParserConfigurationException, InterruptedException, SAXException, IOException
-	{
-        user = "User 3";
-		driver.quit();
-		initialize();
-		driver.get(url);
-        File file = getFileDir("/inputs.xml");
-        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-        Document doc = dBuilder.parse(file);
-        doc.getDocumentElement().normalize();
-        NodeList nList = (NodeList) doc.getElementsByTagName("input");
-        for (int temp = 33; temp < nList.getLength(); temp++)
-        {
-            Node node = nList.item(temp);
-            if (node.getNodeType() == Node.ELEMENT_NODE)
-            {
-                Element eElement = (Element) node;
-                xpath = eElement.getElementsByTagName("xpath").item(0).getTextContent();
-                functionality = eElement.getElementsByTagName("function").item(0).getTextContent();
-                value = eElement.getElementsByTagName("value").item(0).getTextContent();
-                Thread.sleep(1000);
-                performOperation();
-            }
-        }   
-        Thread.sleep(3000);
         driver.quit();
         System.exit(0);
 	}
 	public static void performOperation() throws AWTException, ParserConfigurationException, InterruptedException  , SAXException, IOException
-    {
+        {
     	try{
     	if(functionality.equals("sendKeys")){
                 driver.findElement(By.xpath(xpath)).sendKeys(value);
