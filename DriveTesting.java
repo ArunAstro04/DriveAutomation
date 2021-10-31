@@ -43,7 +43,7 @@ public class DriveTesting extends Screenshot{
 	
 	public static File getFileDir(String pathName) throws Exception {
 		try{
-			return new File(FILE_DIR+pathName);
+			return new File(BASE_FILE_DIR+pathName);
 		}
 		catch(Exception e){
 			System.out.println("Exception occurred while file initialization: " + e.getMessage());
