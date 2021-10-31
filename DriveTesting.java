@@ -38,6 +38,18 @@ public class DriveTesting extends Screenshot{
     static int count = 3;
     static boolean firstTime= true;
     static Robot robot;
+	
+	static String BASE_FILE_DIR = "E:/Selenium/Drive File Sharing Tests/";
+	
+	public static File getFileDir(String pathName) throws Exception {
+		try{
+			return new File(FILE_DIR+pathName);
+		}
+		catch(Exception e){
+			System.out.println("Exception occurred while file initialization: " + e.getMessage());
+			throw e;
+		}
+	}
 
     public static void main(String[] args) throws AWTException, ParserConfigurationException, InterruptedException, SAXException, IOException {
         deletePastReports();
@@ -47,7 +59,7 @@ public class DriveTesting extends Screenshot{
     }
 
     public static void deletePastReports() throws AWTException, ParserConfigurationException, InterruptedException, SAXException, IOException {
-        File dir = new File("E:/Selenium/Drive File Sharing Tests/TestReport/");
+        File dir = getFileDir("TestReport/");
         File[] listFiles = dir.listFiles();
         for(File file : listFiles)
             file.delete();
@@ -90,7 +102,7 @@ public class DriveTesting extends Screenshot{
         user = "User 1";
         initialize();
 		driver.get(url);
-        File file = new File("E:\\Selenium\\Drive File Sharing Tests\\inputs.xml");
+        File file = getFileDir("/inputs.xml");
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
         Document doc = dBuilder.parse(file);
@@ -118,7 +130,7 @@ public class DriveTesting extends Screenshot{
         driver.quit();
 		initialize();
 		driver.get(url);
-        File file = new File("E:\\Selenium\\Drive File Sharing Tests\\inputs.xml");
+        File file = getFileDir("/inputs.xml");
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
         Document doc = dBuilder.parse(file);
@@ -146,7 +158,7 @@ public class DriveTesting extends Screenshot{
 		driver.quit();
 		initialize();
 		driver.get(url);
-        File file = new File("E:\\Selenium\\Drive File Sharing Tests\\inputs.xml");
+        File file = getFileDir("/inputs.xml");
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
         Document doc = dBuilder.parse(file);
@@ -309,7 +321,7 @@ public class DriveTesting extends Screenshot{
 
 	public static void getKeyAndValue() throws AWTException, ParserConfigurationException, InterruptedException, SAXException, IOException
     {
-        File file = new File("E:\\Selenium\\Drive File Sharing Tests\\inputs.xml");
+        File file = getFileDir("/inputs.xml");
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
         Document doc = dBuilder.parse(file);
