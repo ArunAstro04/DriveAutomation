@@ -1,0 +1,250 @@
+<data>
+	<driver>
+		<chrome-driver>
+			<name>webdriver.chrome.driver</name>
+			<path>E:\\chromedriver_win32\\chromedriver.exe</path>
+		</chrome-driver>
+		<gecko-driver>
+			<name>webdriver.gecko.driver</name>
+			<path>E:\\geckodriver-v0.26.0-win64\\geckodriver.exe</path>
+		</gecko-driver>
+		<ie-driver>
+			<name>webdriver.ie.driver</name>
+			<path>E:\\IEDriverServer_Win32_3.150.1\\IEDriverServer.exe</path>
+		</ie-driver>
+		<edge-driver>
+			<name>webdriver.edge.driver</name>
+			<path>E:\\Edge driver\\MicrosoftWebDriver.exe</path>
+		</edge-driver>
+	</driver>
+	<login-page>
+		<url>https://drive.google.com/mail/</url>
+	</login-page>
+	<test-data>
+		<input type="submit">
+				<xpath>/html/body/section/div[2]/div/div/div[1]/a</xpath>
+				<function>click</function>
+				<value>-</value>
+			</input>
+			<input type="text">
+				<xpath>//*[@id="identifierId"]</xpath>
+				<function>sendKeys</function>
+				<value>noreply.chatapp.main</value>
+			</input>
+			<input type="submit">
+				<xpath>//*[@id="identifierNext"]/span/span</xpath>
+				<function>click</function>
+				<value>-</value>
+			</input>
+			<input type="password">
+				<xpath>//*[@id="password"]/div[1]/div/div[1]/input</xpath>
+				<function>sendKeys</function>
+				<value>chatapp123</value>
+			</input>
+			<input type="submit">
+				<xpath>//*[@id="passwordNext"]/span/span</xpath>
+				<function>click</function>
+				<value>-</value>
+			</input>
+			<input type="submit">
+				<xpath>/html/body/div[1]/div[2]/div[1]/div[2]/div/div/div[1]/div/div/div[3]/div/div/div/div/c-wiz/div[2]/c-wiz/div[1]/c-wiz/div/c-wiz/div[1]/c-wiz/c-wiz/div/c-wiz[1]/div/div/div/div[2]</xpath>
+				<function>click</function>
+				<value>-</value>
+			</input>
+			<input type="submit">
+				<xpath>//*[@id="drive_main_page"]/div[2]/div[1]/div[1]/div/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]</xpath>
+				<function>click</function>
+				<value>-</value>
+			</input>
+			<input type="submit">
+				<xpath>iframe[title="Share with others"]</xpath>
+				<function>switchTo</function>
+				<value></value>
+			</input>
+			<input type="textarea">
+				<xpath>//div[1]/div[1]/div[1]/textarea</xpath>
+				<function>sendKeys</function>
+				<value>arunastro1999@gmail.com</value>
+			</input>
+			<input type="submit">
+				<xpath>//*[contains(text(),"Send")]</xpath>
+				<function>click</function>
+				<value>-</value>
+			</input>
+			<input>
+				<xpath>-</xpath>
+				<function>sleep</function>
+				<value>-</value>
+			</input>
+			<input type="text">
+				<xpath>-</xpath>
+				<function>switchTo</function>
+				<value>defaultContent</value>
+			</input>
+			<input type="submit">
+				<xpath>//*[@id="drive_main_page"]/div[2]/div[1]/div[1]/div/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]</xpath>
+				<function>click</function>
+				<value>-</value>
+			</input>
+			<input type="submit">
+				<xpath>iframe[title="Share with others"]</xpath>
+				<function>switchTo</function>
+				<value>-</value>
+			</input>
+			<input type="textarea">
+				<xpath>//div[1]/div[1]/div[1]/textarea</xpath>
+				<function>sendKeys</function>
+				<value>arunkumarpdy@gmail.com</value>
+			</input>
+			<input type="button">
+				<xpath>//div[3]/div[1]/div[4]/div[1]/div[1]/div[2]/div[1]</xpath>
+				<function>click</function>
+				<value></value>
+			</input>
+			<input type="button">
+				<xpath>//*[contains(text(),"Can view")]</xpath>
+				<function>click</function>
+				<value>third</value>
+			</input>
+			<input type="button">
+				<xpath>//*[contains(text(),"Send")]</xpath>
+				<function>click</function>
+				<value>fourth</value>
+			</input>
+			<input type="text">
+				<xpath></xpath>
+				<function>switchTo</function>
+				<value>defaultContent</value>
+			</input>
+			<input type="submit">
+				<xpath>/html/body/div[1]/div[2]/div[1]/div[1]/div/div/div[1]/header/div[2]/div[3]/div[1]/div[2]/div/a</xpath>
+				<function>click</function>
+				<value>-</value>
+			</input>
+			<input type="submit">
+				<xpath>/html/body/div[1]/div[2]/div[1]/div[1]/div/div/div[1]/header/div[2]/div[4]/div[4]/a</xpath>
+				<function>click</function>
+				<value>-</value>
+			</input>
+			<input type="submit">
+				<xpath>/html/body/section/div[2]/div/div/div[1]/a</xpath>
+				<function>click</function>
+				<value>-</value>
+			</input>
+			<input type="text">
+				<xpath>//*[@id="identifierId"]</xpath>
+				<function>sendKeys</function>
+				<value>arunkumarpdy</value>
+			</input>
+			<input type="submit">
+				<xpath>//*[@id="identifierNext"]/span/span</xpath>
+				<function>click</function>
+				<value>-</value>
+			</input>
+			<input type="password">
+				<xpath>//*[@id="password"]/div[1]/div/div[1]/input</xpath>
+				<function>sendKeys</function>
+				<value>itspassword</value>
+			</input>
+			<input type="submit">
+				<xpath>//*[@id="passwordNext"]/span/span</xpath>
+				<function>click</function>
+				<value>-</value>
+			</input>
+			<input type="submit">
+				<xpath>//*[@id="nt:Driv:label"]/div/span</xpath>
+				<function>click</function>
+				<value>-</value>
+			</input>
+			<input type="submit">
+				<xpath>//span[contains(.,'document.docx')]</xpath>
+				<function>doubleClick</function>
+				<value>300</value>
+			</input>
+			<input type="submit">
+				<xpath>//div[16]/div[3]/div[1]/div[2]/div[1]/div[3]/div[2]/div[2]/div[1]</xpath>
+				<function>click</function>
+				<value>-</value>
+			</input>
+			<input type="button">
+				<xpath>/html/body/div[22]/div[3]/div</xpath>
+				<function>click</function>
+				<value>first</value>
+			</input>
+			<input type="button">
+				<xpath></xpath>
+				<function>switchTo</function>
+				<value>tab</value>
+			</input>
+			<input type="text">
+				<xpath>/html/body/div[5]/div/div/div[6]/div/div[1]/div[1]/div/div/div/div[2]/div/div[2]/div[1]/div/div/div[1]/div/div/div[1]/div/div[4]/span[2]/span/span[1]</xpath>
+				<function>doubleClick</function>
+				<value>-</value>
+			</input>
+			<input type="button">
+				<xpath>//*[@id="boldButton"]/div/div</xpath>
+				<function>click</function>
+				<value>-</value>
+			</input>
+			<input type="submit">
+				<xpath>/html/body/section/div[2]/div/div/div[1]/a</xpath>
+				<function>click</function>
+				<value>-</value>
+			</input>
+			<input type="text">
+				<xpath>//*[@id="identifierId"]</xpath>
+				<function>sendKeys</function>
+				<value>arunastro1999@gmail.com</value>
+			</input>
+			<input type="submit">
+				<xpath>//*[@id="identifierNext"]/span/span</xpath>
+				<function>click</function>
+				<value>-</value>
+			</input>
+			<input type="password">
+				<xpath>//*[@id="password"]/div[1]/div/div[1]/input</xpath>
+				<function>sendKeys</function>
+				<value>DataBuster@04</value>
+			</input>
+			<input type="submit">
+				<xpath>//*[@id="passwordNext"]/span/span</xpath>
+				<function>click</function>
+				<value>-</value>
+			</input>
+			<input type="submit">
+				<xpath>//*[@id="nt:Driv:label"]/div/span</xpath>
+				<function>click</function>
+				<value>-</value>
+			</input>
+			<input type="submit">
+				<xpath>//span[contains(.,'document.docx')]</xpath>
+				<function>doubleClick</function>
+				<value>-</value>
+			</input>
+			<input type="submit">
+				<xpath>//div[16]/div[3]/div[1]/div[2]/div[1]/div[3]/div[2]/div[2]/div[1]</xpath>
+				<function>click</function>
+				<value>-</value>
+			</input>
+			<input type="button">
+				<xpath>/html/body/div[22]/div[3]/div</xpath>
+				<function>click</function>
+				<value>first</value>
+			</input>
+			<input type="button">
+				<xpath></xpath>
+				<function>switchTo</function>
+				<value>tab</value>
+			</input>
+			<input type="text">
+				<xpath>/html/body/div[5]/div/div/div[7]/div/div[1]/div[1]/div/div/div/div[2]/div/div[2]/div[1]/div/div/div[1]/div/div/div[1]/div/div[4]/span[2]/span/span[1]</xpath>
+				<function>doubleClick</function>
+				<value>-</value>
+			</input>
+			<input type="button">
+				<xpath>//*[@id="boldButton"]/div/div</xpath>
+				<function>click</function>
+				<value>second</value>
+			</input>
+	</test-data>
+</data>

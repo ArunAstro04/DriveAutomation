@@ -1,0 +1,7 @@
+<suite name="Drive Sharing">
+	<test name="DriveShareTest">
+			<classes>
+				<class name="DriveTesting"/>
+			</classes>
+	</test>
+</suite>
