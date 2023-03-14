@@ -29,7 +29,7 @@
 			<input type="text">
 				<xpath>//*[@id="identifierId"]</xpath>
 				<function>sendKeys</function>
-				<value>noreply.chatapp.main</value>
+				<value>******</value>
 			</input>
 			<input type="submit">
 				<xpath>//*[@id="identifierNext"]/span/span</xpath>
@@ -39,7 +39,7 @@
 			<input type="password">
 				<xpath>//*[@id="password"]/div[1]/div/div[1]/input</xpath>
 				<function>sendKeys</function>
-				<value>chatapp123</value>
+				<value>*****</value>
 			</input>
 			<input type="submit">
 				<xpath>//*[@id="passwordNext"]/span/span</xpath>
